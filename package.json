@@ -1,0 +1,34 @@
+{
+  "name": "create-pull-request",
+  "version": "1.0.0",
+  "author": "MSA Inc.",
+  "description": "A GitHub Action to create pull requests via the GitHub Pulls API",
+  "main": "src/main.js",
+  "scripts": {
+    "package": "ncc build src/main.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CLCInc/create-pull-request-action.git"
+  },
+  "dependencies": {
+    "@actions/core": "1.2.2",
+    "@actions/github": "2.1.1"
+  },
+  "devDependencies": {
+    "@clc_inc/eslint-config-clc": "^2.0.0",
+    "@clc_inc/prettier-config-clc": "^2.0.0",
+    "@zeit/ncc": "0.21.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "husky": "^4.2.1",
+    "prettier": "^1.19.1"
+  },
+  "prettier": "@clc_inc/prettier-config-clc",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run package && git add dist/"
+    }
+  }
+}

@@ -1,0 +1,3 @@
+{
+  "extends": "@clc_inc/eslint-config-clc"
+}
